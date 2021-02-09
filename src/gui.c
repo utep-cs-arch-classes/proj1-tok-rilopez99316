@@ -3,7 +3,8 @@
 int main()
 {
   char input[100];
-  scanf("%[^\n]s", &input);
-  printf("%s\n", input);
+  if (fgets (input, sizeof(input), stdin)){
+    printf("%s",input);
+  }
   return 0;
 }
