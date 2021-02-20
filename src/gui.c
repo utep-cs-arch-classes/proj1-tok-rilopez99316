@@ -2,5 +2,5 @@
 #include "tokenizer.h"
 
 int main(){
-  printf("%d",space_char(' '));
+  printf("%d",non_space_char(' '));
 }
