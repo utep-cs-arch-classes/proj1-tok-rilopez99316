@@ -14,6 +14,9 @@ int non_space_char(char c){
 }
 
 char *word_start(char *str){
+  if (*str == '\0'){
+    return str;
+  }
   while(*str != ' '){
     str++;
   }
