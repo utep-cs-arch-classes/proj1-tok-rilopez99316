@@ -2,5 +2,7 @@
 #include "tokenizer.h"
 
 int space_char(char c){
-  return 1;
+  if (c == ' ' | c == '\t' | c == '\n')
+    return 1;
+  return 0;
 }
