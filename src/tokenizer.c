@@ -23,7 +23,12 @@ char *word_start(char *str){
   return str+1;
 }
 
-
+char *word_end(char *str){
+  while(*str != ' '){
+    str++;
+  }
+  return str;
+}
 
 int count_words(char *str){
   int words = 0;
