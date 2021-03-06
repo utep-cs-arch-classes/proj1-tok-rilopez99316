@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "tokenizer.h"
+#include <stdlib.h>
 
 int space_char(char c){
   if (c == ' ' | c == '\t' | c == '\n')
@@ -38,4 +39,26 @@ int count_words(char *str){
     }
   }
   return words + 1;
+}
+
+//Return lenth characters from src
+//Return a freshlly allocated new zero-terminated string containing <len> chars from <inStr>
+char *copy_str(char *src, short len){
+  char *str = (char *) malloc (len + 1); // The +1 stands for zero termination
+  char * tmp = str;
+
+  while (*src != '\0'){
+    *tmp = *src;
+    *tmp++;
+    *src++;
+  }
+  *tmp = '\0';
+  
+  return str;
+}
+
+//prints the tokkens pointed to by toks
+//returns a frershly allocated zero-terminated vector of freshly allocated space-separated tokens from zero-terminated str.
+void print_tokens(char **toks){
+  
 }

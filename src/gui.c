@@ -5,7 +5,7 @@
 int main(){
   char arr [] = "Hello World";
   char *ptr = &arr[0];
-  //printf("%d", count_words(ptr));
-  printf("%c\n", *word_start(ptr));
+  printf("%s\n",copy_str(ptr,1));
+  
   return 0;
 }
