@@ -59,5 +59,9 @@ char *copy_str(char *src, short len){
 
 //prints the tokkens pointed to by toks
 void print_tokens(char **toks){
-  printf("%s\n", *toks);
+  int i = 0;
+  while (*toks[i] != '\0'){
+    printf("%c", *toks[i]);
+    i++;
+  }
 }
