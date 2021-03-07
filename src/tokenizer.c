@@ -61,7 +61,17 @@ char *copy_str(char *src, short len){
 void print_tokens(char **toks){
   int i = 0;
   while (*toks[i] != '\0'){
-    printf("%c", *toks[i]);
+    printf("%c\n", *toks[i]);
     i++;
   }
+}
+
+//Free all memory associated with toks
+void free_tokens(char **toks){
+  int i = 0;
+  while (*toks[i] != '\0'){
+    free(toks[i]);
+    i++;
+  }
+  free(toks);
 }
