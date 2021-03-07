@@ -3,9 +3,10 @@
 #include <stdlib.h>
 
 int main(){
-  char arr [] = "Hello World";
+  char arr [] = "Hello World ";
   char *ptr = &arr[0];
-  printf("%s\n",copy_str(ptr,1));
+  char **ptr2 = &ptr;
+  print_tokens(ptr2);
   
   return 0;
 }

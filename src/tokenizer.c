@@ -58,7 +58,6 @@ char *copy_str(char *src, short len){
 }
 
 //prints the tokkens pointed to by toks
-//returns a frershly allocated zero-terminated vector of freshly allocated space-separated tokens from zero-terminated str.
 void print_tokens(char **toks){
-  
+  printf("%s\n", *toks);
 }
