@@ -69,7 +69,7 @@ void print_tokens(char **toks){
 //Free all memory associated with toks
 void free_tokens(char **toks){
   int i = 0;
-  while (*toks[i] != '\0'){
+  while (toks[i]){
     free(toks[i]);
     i++;
   }

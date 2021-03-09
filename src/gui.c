@@ -6,14 +6,19 @@ int limit = 100;
 
 int main(){
   char arr [] = "Hello World";
-  char *ptr[limit];
+  char *ptr [limit]; 
+  char **ptr2;
 
-  for (int i = 0; i < limit; i++){
-    ptr[i] = &arr[i]; 
+  for (int i; i < limit; i++){
+    ptr[i] = &arr[i];
   }
-  char **ptr2 = &ptr[0];
+
+  ptr2 = &ptr[0];
+  
+  print_tokens(ptr2);
+
+  free_tokens(ptr2);
 
   print_tokens(ptr2);
- 
   return 0;
 }
