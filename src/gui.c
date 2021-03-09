@@ -16,7 +16,8 @@ int main(){
   
   print_tokens(ptr2);
   
-  //ptr2[0] = copy_str(ptr, 12);
-  //print_tokens(ptr2);
+  ptr2[0] = copy_str(ptr, 12);
+  free_tokens(ptr2);
+  print_tokens(ptr2);
   return 0;
 }
