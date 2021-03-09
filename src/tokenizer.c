@@ -44,17 +44,12 @@ int count_words(char *str){
 //Return lenth characters from src
 //Return a freshlly allocated new zero-terminated string containing <len> chars from <inStr>
 char *copy_str(char *src, short len){
-  char *str = (char *) malloc (len + 1); // The +1 stands for zero termination
-  char * tmp = str;
-
-  while (*src != '\0'){
-    *tmp = *src;
-    *tmp++;
-    *src++;
+  char *copy = (char*) malloc (sizeof(char) *len);
+  for (int i = 0; i < len; i++){
+    *(copy+i) = *(src+i);
   }
-  *tmp = '\0';
-  
-  return str;
+
+  return copy;
 }
 
 //prints the tokkens pointed to by toks

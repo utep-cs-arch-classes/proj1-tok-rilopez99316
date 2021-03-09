@@ -6,19 +6,19 @@ int limit = 100;
 
 int main(){
   char arr [] = "Hello World";
-  char *ptr [limit]; 
+  char *ptr;
   char **ptr2;
 
-  for (int i; i < limit; i++){
-    ptr[i] = &arr[i];
-  }
+  ptr = arr;
+  ptr2 = (char**) malloc (sizeof(char*)*2);
+  *(ptr2) = ptr;
+  ptr2[1] = 0;
 
-  ptr2 = &ptr[0];
-  
-  print_tokens(ptr2);
+  printf("%s\n", *(ptr2));
 
-  free_tokens(ptr2);
+  ptr2[0] = copy_str(ptr, 12);
+  free(*(ptr2));
+  printf("%s\n", *(ptr2));
 
-  print_tokens(ptr2);
   return 0;
 }
