@@ -14,10 +14,9 @@ int main(){
   *(ptr2) = ptr;
   ptr2[1] = 0;
   
-  print_tokens(ptr2);
-  
   ptr2[0] = copy_str(ptr, 12);
-  free_tokens(ptr2);
-  print_tokens(ptr2);
+
+  tokenize("Hello world string");
+  
   return 0;
 }

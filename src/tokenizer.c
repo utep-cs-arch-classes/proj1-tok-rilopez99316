@@ -48,7 +48,7 @@ char *copy_str(char *src, short len){
   for (int i = 0; i < len; i++){
     *(copy+i) = *(src+i);
   }
-
+  copy[len] = 0;
   return copy;
 }
 
@@ -71,4 +71,52 @@ void free_tokens(char **toks){
     i++;
   }
   free(toks);
+}
+
+//Returns a freshly allocated zero-terminated vector of freshly allocated space-separated tokens from zero-terminated str.
+
+//For example: tokeize ("hello world string") would result in:
+
+//tokens[0] = "hello"
+//tokens[1] = "world"
+//tokens[2] = "string"
+//tokens[3] = 0
+
+char **tokenize(char *s){
+  char *ptr3;
+  char **ptr4;
+  int num_words = count_words(s) + 1; // "+1" cerate space for zero terminated value in vector
+
+  ptr3 = s; //frershly allocated string s
+  ptr4 = (char**) malloc (sizeof(char*) * num_words);//freshly allocated vector
+
+  char *temp;
+  int j = 0;
+  int counter = 0;
+
+  //loop for vector
+  while (j < num_words - 1){
+    //sets counter for letters in word to zero
+    counter = 0;
+
+    //loop counts letters in words depending on pointer 
+    for (int i = 0; non_space_char(*(ptr3+i)); i++){
+      counter++;
+    }
+
+    //copies index word to temp
+    temp = copy_str(ptr3, counter);
+    //places it in vector
+    ptr4[j] = temp;
+
+    //moves pointer to the beginnign of next word
+    ptr3 += counter+1;
+    j++;
+  
+    printf("%s\n", temp);
+  }
+  // zero terminated value
+  ptr4[j+1] = 0;
+  printf("%d\n", ptr4[j+1]);
+  return ptr4;
 }
