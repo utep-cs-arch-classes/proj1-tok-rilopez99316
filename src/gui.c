@@ -40,8 +40,9 @@ int main(){
 
   printf("%s\n", get_history(list, 1));
   printf("%s\n", get_history(list, 2));
-  printf("%s\n", get_history(list, 3));
+  printf("%s\n\n", get_history(list, 3));
 
-
+  print_history(list);
+  
   return 0;
 }
