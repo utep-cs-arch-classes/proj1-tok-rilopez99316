@@ -33,11 +33,13 @@ void add_history(List *list, char *str){
 }
 
 char *get_history (List *list, int id){
-  while(list->root->id != id){
-    list->root = list->root->next;
+  Item *temp = list->root;
+
+  while(temp->id != id){
+    temp = temp->next;
   }
 
-  return list->root->str;
+  return temp->str;
 }
 
 //void *print_history(List *list){

@@ -27,20 +27,20 @@ int main(){
   List *list = init_history();
     
   add_history(list, array1);
-  printf("%s\n", list->root->next->str);
+  printf("%s %d\n", list->root->next->str, list->root->next->id);
   
   add_history(list, array2);
-  printf("%s\n", list->root->next->next->str);
+  printf("%s %d\n", list->root->next->next->str , list->root->next->next->id);
 
   add_history(list, array3);
-  printf("%s\n", list->root->next->next->next->str);
+  printf("%s %d\n\n", list->root->next->next->next->str, list->root->next->next->next->id);
 
   add_history(list, array4);
   add_history(list, array5);
 
-  //printf("%s\n", get_history(list, 1));
-  //printf("%s\n", get_history(list, 1));
-  //printf("%s\n", get_history(list, 2));
+  printf("%s\n", get_history(list, 1));
+  printf("%s\n", get_history(list, 2));
+  printf("%s\n", get_history(list, 3));
 
 
   return 0;
