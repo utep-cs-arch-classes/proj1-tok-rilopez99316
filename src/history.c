@@ -18,16 +18,19 @@ void add_history(List *list, char *str){
   int counter = 1;
   printf("1 ");
   while(temp->root->next != NULL){
-    temp->root = temp->root->next;
     counter++;
     printf("2 ");
+    temp->root = temp->root->next;
   }
   printf("3 ");
 
-  temp->root->str = str;
-  temp->root->id = counter;
+  Item *node = (Item *) malloc(sizeof(Item));
+  node->next = NULL;
+  node->str = str;
+  node->id = counter;
 
-  printf("%s, %d\n", temp->root->str, temp->root->id);
+  temp->root->next = node;
+  // printf("%s, %d\n", temp->root->str, temp->root->id);
   
 }
 

@@ -19,20 +19,17 @@ int main(){
 
   
   char array[] = "John Cena";
+  char array2[] = "Torpedo";
+  char array3[] = "Warren Buffet";
   char *str;
   str = array;
   
-  //List *list = (List *) malloc(sizeof(List));
-  //list->root = (Item *) malloc(sizeof(Item));
-  //Item *root = list->root;
-
-  // list->root-> next = NULL;
-  // list->root->str = array;
-  //list->root->id = 5;
-
+  
   List *list = init_history();
   add_history(list, array);
+  add_history(list, array2);
+  add_history(list, array3);
+
   
-  printf("%s, %d\n", list->root->str, list->root->id);
   return 0;
 }
