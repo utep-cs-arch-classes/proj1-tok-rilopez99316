@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "tokenizer.h"
 #include <stdlib.h>
+#include "history.h"
 
 int space_char(char c){
   if (c == ' ' | c == '\t' | c == '\n')

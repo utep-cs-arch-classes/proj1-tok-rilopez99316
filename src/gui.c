@@ -4,6 +4,7 @@
 #include "history.h"
 
 int main(){
+  
   char arr [] = "Hello World";
   char *ptr;
   char **ptr2;
@@ -14,10 +15,11 @@ int main(){
   ptr2[1] = 0;
   
   ptr2[0] = copy_str(ptr, 12);
-
+  printf("tokenizer('Hello world string'):\n");
   tokenize("Hello world string");
 
-  
+  printf("\nHistory.c\n");
+  //history.c
   char array1 [] = "John Cena";
   char array2 [] = "Torpedo";
   char array3 [] = "Warren Buffet";
@@ -27,26 +29,25 @@ int main(){
   List *list = init_history();
     
   add_history(list, array1);
-  printf("%s %d\n", list->root->next->str, list->root->next->id);
+  printf("String: %s \t Id: %d\n", list->root->next->str, list->root->next->id);
   
   add_history(list, array2);
-  printf("%s %d\n", list->root->next->next->str , list->root->next->next->id);
+  printf("String: %s \t Id: %d\n", list->root->next->next->str , list->root->next->next->id);
 
   add_history(list, array3);
-  printf("%s %d\n\n", list->root->next->next->next->str, list->root->next->next->next->id);
+  printf("String: %s \t Id: %d\n\n", list->root->next->next->next->str, list->root->next->next->next->id);
 
-  add_history(list, array4);
-  add_history(list, array5);
 
-  printf("%s\n", get_history(list, 1));
-  printf("%s\n", get_history(list, 2));
-  printf("%s\n\n", get_history(list, 3));
+  printf("String: %s \t Id: 3\n", get_history(list, 3));
+  printf("String: %s \t Id: 1\n", get_history(list, 1));
+  printf("String: %s \t Id: 2\n\n", get_history(list, 2));
 
+  printf("Printing Before free_history\n\n");
   print_history(list);
-
+  
   free_history(list);
 
-  printf("\n 1 \n");
+  printf("\nPrinting After free_history\n\n");
   print_history(list);
   
   return 0;

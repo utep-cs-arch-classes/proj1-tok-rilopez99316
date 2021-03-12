@@ -45,7 +45,7 @@ char *get_history (List *list, int id){
 void print_history(List *list){
   Item *temp = list->root;
   while(temp->next != NULL){
-    printf("%s %d\n", temp->next->str, temp->next->id);
+    printf("String: %s \t Id: %d\n", temp->next->str, temp->next->id);
     temp = temp->next;
   }
 }

@@ -1,8 +1,12 @@
-tokenizer.o: tokenizer.c tokenizer.h
+tokenizer.o: tokenizer.c tokenizer.h history.h
 	gcc -c tokenizer.c
 
-gui.o: gui.c tokenizer.h
+gui.o: gui.c tokenizer.h history.h
 	gcc -c gui.c
 
-gui: gui.o tokenizer.o
-	gcc -o gui gui.o tokenizer.o
+history.o: history.c history.h
+	gcc -c history.c
+
+gui: gui.o tokenizer.o history.o
+	gcc -o gui gui.o tokenizer.o history.o
+
