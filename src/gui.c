@@ -43,6 +43,11 @@ int main(){
   printf("%s\n\n", get_history(list, 3));
 
   print_history(list);
+
+  free_history(list);
+
+  printf("\n 1 \n");
+  print_history(list);
   
   return 0;
 }
