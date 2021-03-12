@@ -3,45 +3,42 @@
 #include "history.h"
 
 List *init_history(){
-  List *list = (List *) malloc(sizeof(List)*1);
-  list->root = (Item *) malloc(sizeof(Item)*1);
+  List *list = (List *) malloc(sizeof(List)*10);
+  list->root = (Item *) malloc(sizeof(Item)*10);
   Item *root = list->root;
 
-  root->next = NULL;
-  root->str = NULL;
-  root->id = 0;
+  list->root->next = NULL;
+  list->root->str = NULL;
+  list->root->id = 0;
+  
   return list;
 }
 
 void add_history(List *list, char *str){
-  List *temp = list;
+  Item *temp = list->root;
   int counter = 1;
-  printf("1 ");
-  while(temp->root->next != NULL){
+
+  while(temp->next != NULL){
     counter++;
-    printf("2 ");
-    temp->root = temp->root->next;
+    temp = temp->next;
   }
-  printf("3 ");
 
   Item *node = (Item *) malloc(sizeof(Item));
   node->next = NULL;
   node->str = str;
   node->id = counter;
 
-  temp->root->next = node;
-  // printf("%s, %d\n", temp->root->str, temp->root->id);
-  
+  temp->next = node;
+ 
 }
 
-//char *get_history (List *list, int id){
-  // Item *temp = list;
- // while(temp->id != id){
-    // temp = temp -> next;
-    //}
+char *get_history (List *list, int id){
+  while(list->root->id != id){
+    list->root = list->root->next;
+  }
 
-  // return temp->str;
-  //}
+  return list->root->str;
+}
 
 //void *print_history(List *list){
   // while(list->next != NULL){
